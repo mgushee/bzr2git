@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 import os, shutil, subprocess, time
 from optparse import OptionParser
@@ -91,7 +91,8 @@ def Main():
             except KeyboardInterrupt:
                 print "  - Skipped commit of dead BZR repo"
 
-        run("rm -rf .bzr", "git reset --hard HEAD")
+        #run("rm -rf .bzr", "git reset --hard HEAD")
+        run("rm -rf .bzr", "git reset --hard")
         ignore = None
         if os.path.exists(".bzrignore"):
             ignore = open(".bzrignore").read()
